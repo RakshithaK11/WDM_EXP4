@@ -15,26 +15,38 @@
 
 ### Program:
 ```python
-# Visitor segmentation based on characteristics
-# read the data
-/*WRITE YOUR CODE HERE
+visitor_df = pd.read_csv('/content/clustervisitor.csv')
 
 # Perform segmentation based on characteristics (e.g., age groups)
-/*WRITE YOUR CODE HERE
+age_groups ={ 'young' : (visitor_df['Age'] <=30 ),
+'Middle-aged': ((visitor_df['Age'] > 30 ) & (visitor_df['Age'] <=50)),
+'Elderly': (visitor_df['Age'] > 50)
+}
+pri t(age_groups)
+for group, condition in age_groups.item():
+visitors_in_group = visitor_df[condition]
+print(f"Visitor in {group} age group:")
+print(visitors_in_group)
+print()
 
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/291300fa-6e67-4650-847d-526b846968db)
+![image](https://github.com/user-attachments/assets/2d7e11f0-7202-46b9-8bbd-52f674c78f62)
+
 
 ### Visualization:
 ```python
 # Create a list to store counts of visitors in each age group
-/*WRITE YOUR CODE HERE
+visitor_counts = []
 
 # Count visitors in each age group
-/*WRITE YOUR CODE HERE
+for group, condition in age_groups.item():
+visitors_in_group = visitor_df[condition]
+visitor_counts.append(len(visitors_in_group))
     
 # Define age group labels and plot a bar chart
-/*WRITE YOUR CODE HERE
+age_group+labels = list(Age_groups.keys())
 
 plt.figure(figsize=(8, 6))
 plt.bar(age_group_labels, visitor_counts, color='skyblue')
@@ -45,5 +57,7 @@ plt.show()
 ```
 ### Output:
 
+![image](https://github.com/user-attachments/assets/19a608ba-9448-4149-a11b-63dcdfbea2db)
 
 ### Result:
+Thus  Cluster and Visitor Segmentation for Navigation patterns are exicuted successfully
